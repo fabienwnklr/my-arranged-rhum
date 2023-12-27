@@ -40,6 +40,12 @@ const links = [
 </script>
 
 <template>
-  <UVerticalNavigation :links="links" class='flex flex-col shadow-[0_35px_30px_-15px]
-  shadow-current' :ui="{ label: 'hidden lg:flex' }" />
+  <UVerticalNavigation
+    :links="links"
+    class="flex flex-col shadow-[0_35px_30px_-15px] shadow-current"
+  >
+    <template #default="{ link }">
+      <span class="group-hover:text-primary truncate relative hidden lg:flex">{{ link.label }}</span>
+    </template>
+  </UVerticalNavigation>
 </template>
