@@ -1,28 +1,31 @@
 <script setup>
+import { useI18n } from "#imports";
+
+const { t } = useI18n();
 const colorMode = useColorMode();
 const links = [
   {
-    label: "Accueil",
+    label: t("navbar.home"),
     icon: "i-heroicons-home",
     to: "/",
   },
   {
-    label: "Recettes",
+    label: t("navbar.recipes"),
     icon: "i-heroicons-building-storefront",
     to: "/recipes",
   },
   {
-    label: "Favoris",
+    label: t("navbar.favorites"),
     icon: "i-heroicons-heart",
     to: "/favorites",
   },
   {
-    label: "Actualités",
+    label: t("navbar.news"),
     icon: "i-heroicons-newspaper",
     to: "/about",
   },
   {
-    label: "Mon compte",
+    label: t("navbar.account"),
     avatar: {
       src: "https://avatars.githubusercontent.com/u/739984?v=4",
     },

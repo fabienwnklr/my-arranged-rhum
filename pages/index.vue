@@ -5,22 +5,19 @@ const { t } = useI18n();
 
 const items = [
   {
-    label: t("home_tab_1"),
-    icon: "i-heroicons-bell-alert",
-    iconClass: " text-red-600",
-    content: "This is the content shown for Tab1",
+    key: "new",
+    label: t("home.tab_new_recipes"),
+    description: "Make changes to your account here. Click save when you're done.",
   },
   {
-    label: t("home_tab_2"),
-    icon: "i-heroicons-check-badge",
-    iconClass: " text-green-600",
-    content: "And, this is the content for Tab2",
+    key: "popular",
+    label: t("home.tab_popular_recipes"),
+    description: "Change your password here. After saving, you'll be logged out.",
   },
   {
-    label: t("home_tab_3"),
-    icon: "i-heroicons-exclamation-triangle",
-    iconClass: " text-orange-600",
-    content: "Finally, this is the content for Tab3",
+    key: "atypical",
+    label: t("home.tab_atypical_recipes"),
+    description: "Change your password here. After saving, you'll be logged out.",
   },
 ];
 
@@ -44,21 +41,14 @@ const selected = computed({
     });
   },
 });
+
 </script>
 
 <template>
-  <h1 class="text-2xl mb-3 text-center">{{ $t("home_title") }}</h1>
-  <UTabs v-model="selected" :items="items">
-    <template #default="{ item, index, selected }">
-      <div class="flex items-center gap-2 relative truncate">
-        <UIcon :name="item.icon" :class="'w-4 h-4 flex-shrink-0' + item.iconClass" />
-
-        <span class="truncate">{{ item.label }}</span>
-
-        <span
-          v-if="selected"
-          class="w-2 h-2 rounded-full bg-primary-500 dark:bg-primary-400"
-        />
+  <UTabs v-model="selected" :items="items" class="w-full">
+    <template #item="{ item }">
+      <div v-if="item.key === 'new'" class="grid grid-cols-4 gap-4">
+        <div v-for="item in 30" class="p-4 shadow-gray-400 rounded-md shadow-md">content 1</div>
       </div>
     </template>
   </UTabs>

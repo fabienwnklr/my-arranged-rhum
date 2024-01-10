@@ -4,17 +4,35 @@ export default defineI18nConfig(() => ({
   messages: {
     en: {
       welcome: 'Welcome',
-      home_title: 'Best recipes',
-      home_tab_1: 'Last recipes',
-      home_tab_2: 'Popular recipes',
-      home_tab_3: 'Atypical recipes',
+      navbar: {
+        home: 'Home',
+        recipes: 'Recipes',
+        favorites: 'Favorites',
+        news: 'News',
+        account: 'Account'
+      },
+      home: {
+        title: 'Best recipes',
+        tab_new_recipes: 'Last recipes',
+        tab_popular_recipes: 'Popular recipes',
+        tab_atypical_recipes: 'Atypical recipes'
+      }
     },
     fr: {
-      welcome: 'Bienvenue',
-      home_title: 'Les meilleures recettes de rhum arrangé',
-      home_tab_1: 'Dernières recettes',
-      home_tab_2: 'Recettes populaires',
-      home_tab_3: 'Recettes atypiques',
+      navbar: {
+        home: 'Accueil',
+        recipes: 'Recettes',
+        favorites: 'Favoris',
+        news: 'Actualités',
+        account: 'Mon compte'
+      },
+      home: {
+        title: 'Les meilleures recettes de rhum arrangé',
+        tab_new_recipes: 'Dernières recettes',
+        tab_popular_recipes: 'Recettes populaires',
+        tab_atypical_recipes: 'Recettes atypiques'
+      },
+      welcome: 'Bienvenue'
     }
   }
 }));
